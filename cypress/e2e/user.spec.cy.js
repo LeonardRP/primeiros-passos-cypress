@@ -30,7 +30,7 @@ describe('Orange HRM Tests', () => {
     cy.get('.oxd-select-dropdown > :nth-child(27)').click()
     cy.get(':nth-child(1) > .oxd-form > .oxd-form-actions > .oxd-button').click()
   })
-  it.skip('Login - Failure', () => {
+  it('Login - Failure', () => {
     cy.visit('/auth/login')
     cy.get(selectorsList.usernameField).type(userData.userFail.username)
     cy.get(selectorsList.passwordField).type(userData.userFail.password)
