@@ -28,7 +28,10 @@ describe('Orange HRM Tests', () => {
     cy.get(selectorsList.genericField).eq(3).clear().type('Nickname')
     cy.get(selectorsList.genericField).eq(5).clear().type('Updated Driver License Number')
     cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input').clear().type('2025-03-19')
-    cy.get(selectorsList.dateCloseButton).click()
+    cy.get(selectorsList.dateCloseButton).click({force: true})
+    cy.get(':nth-child(5) > :nth-child(1) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon').click()
+    cy.get('.oxd-select-dropdown > :nth-child(27)').click()
+    cy.get(':nth-child(1) > .oxd-form > .oxd-form-actions > .oxd-button').click()
   })
   it('Login - Failure', () => {
     cy.visit('/auth/login')
